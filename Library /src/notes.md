@@ -9,7 +9,7 @@ ENUMs are constants and not strings!
 
 Library:
 
-- list of books will be done via a List
+- list of books will be done via a List (done for the moment)
 
 - user needs to ask for a book;
 - program checks whether the book is available or exists in the library;
