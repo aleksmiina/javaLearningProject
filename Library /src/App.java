@@ -7,10 +7,12 @@ public class App {
 
         
         System.out.println("Welcome to the Great Library of Kalimdor!");
-        //System.out.println("Pleae make your choice:"); will go under the User's input class 
+        
+        App app = new App(); // creating an instance of the App class
+        ListOfBooks listOfBooks = app.new ListOfBooks();
+        UserAsksForBook userAsksForBook = app.new UserAsksForBook();
+        
 
-        
-        
     }
 
     public class Book {
@@ -41,14 +43,21 @@ public class App {
             books.add(new Book("The War of the Sands: Chronicles of the Ahn'Qiraj Conflict", "Silithus Historians' Guild", 80, false)); 
             books.add(new Book("Echoes of the Long Hunt: Tauren Oral Traditions (Transcribed)", "Bravehoof the Scribe",150, true)); 
  
-
         }
+
+        public void PrintTheBooks(){
+
+            for(Book bookName : books) {
+                System.out.println(bookName);
+            }
+        }   
     }
 
     public class UserAsksForBook{
         private Scanner scanner;
 
         public UserAsksForBook(){
+            System.out.println("Please make your choice:");
             this.scanner = new Scanner(System.in);
             String name = scanner.nextLine();
             System.out.println("Your book choice was " + name); 
