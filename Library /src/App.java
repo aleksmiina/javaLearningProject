@@ -6,11 +6,12 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         
-        System.out.println("Welcome to the Great Library of Kalimdor!");
+        System.out.println("Welcome to the Great Library of Kalimdor!\n");
         
         App app = new App(); // creating an instance of the App class
-        ListOfBooks listOfBooks = app.new ListOfBooks();
-        UserAsksForBook userAsksForBook = app.new UserAsksForBook();
+        ListOfBooks listOfBooks = app.new ListOfBooks(); // creating an instance of the class
+        listOfBooks.PrintTheBooks();
+        UserAsksForBook userAsksForBook = app.new UserAsksForBook(listOfBooks);
         
 
     }
@@ -28,6 +29,10 @@ public class App {
             this.isAvailable = isAvailable;
         }
 
+        @Override
+        public String toString() { //toString is a method's name for overriding 
+            return "'" + name + "', author='" + author + "', yearPublished=" + yearPublished + ", isAvailable=" + isAvailable;
+        }
     }
 
     public class ListOfBooks {
@@ -47,6 +52,7 @@ public class App {
 
         public void PrintTheBooks(){
 
+            System.out.println("Here is the list of our treasured books: \n");
             for(Book bookName : books) {
                 System.out.println(bookName);
             }
@@ -56,17 +62,26 @@ public class App {
     public class UserAsksForBook{
         private Scanner scanner;
 
-        public UserAsksForBook(){
+        public UserAsksForBook(ListOfBooks listOfBooks) {
             System.out.println("Please make your choice:");
             this.scanner = new Scanner(System.in);
             String name = scanner.nextLine();
-            System.out.println("Your book choice was " + name); 
+
+            boolean bookFound = false;
+            for(Book book : listOfBooks.books) {
+                if(book.name.equalsIgnoreCase(name)){
+                    System.out.println("Your book choice was " + book);
+                    bookFound = true;
+                    break;
+                }
+            }
+
+            if (!bookFound) {
+                System.out.println("Sorry, this book is not in our inventory");
+            }    
+
             scanner.close();
         }
-
-
-
-
 
     }
 

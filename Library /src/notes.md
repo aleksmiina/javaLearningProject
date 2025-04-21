@@ -20,3 +20,5 @@ To do:
 
 1. I want to print out all the available books to a user in order he could choose one.
     1.1. There is some issue with the override which I need to get into later
+
+2. Now, a user needs to pick up a book and write its name in the terminal. Then the program will check whether this book is in the list. 
