@@ -1,12 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
         
         System.out.println("Welcome to the Great Library of Kalimdor!");
-        System.out.println("Pleae make your choice:");
+        //System.out.println("Pleae make your choice:"); will go under the User's input class 
+
+        
         
     }
 
@@ -43,7 +46,19 @@ public class App {
     }
 
     public class UserAsksForBook{
-        
+        private Scanner scanner;
+
+        public UserAsksForBook(){
+            this.scanner = new Scanner(System.in);
+            String name = scanner.nextLine();
+            System.out.println("Your book choice was " + name); 
+            scanner.close();
+        }
+
+
+
+
+
     }
 
 }
