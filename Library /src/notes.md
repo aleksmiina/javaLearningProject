@@ -1,4 +1,9 @@
-Writing here.
+pushing the code (as usual):
+
+git add .
+git commit -m "Updates in code"
+git push
+
 
 ENUMs are constants and not strings! 
 
