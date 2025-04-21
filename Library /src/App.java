@@ -29,6 +29,10 @@ public class App {
             this.isAvailable = isAvailable;
         }
 
+        public String getName() {                   //need to get a better understanding
+            return name;
+        }
+
         @Override
         public String toString() { //toString is a method's name for overriding 
             return "'" + name + "', author='" + author + "', yearPublished=" + yearPublished + ", isAvailable=" + isAvailable;
@@ -57,6 +61,10 @@ public class App {
                 System.out.println(bookName);
             }
         }   
+
+        public List<Book> getBooks() {                                  //need to get a better understanding
+            return books;
+        }
     }
 
     public class UserAsksForBook{
@@ -68,8 +76,8 @@ public class App {
             String name = scanner.nextLine();
 
             boolean bookFound = false;
-            for(Book book : listOfBooks.books) {
-                if(book.name.equalsIgnoreCase(name)){
+            for(Book book : listOfBooks.getBooks()) {
+                if(book.getName().equalsIgnoreCase(name)){                  //need to get a better understanding
                     System.out.println("Your book choice was " + book);
                     bookFound = true;
                     break;

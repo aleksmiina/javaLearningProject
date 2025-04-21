@@ -22,3 +22,5 @@ To do:
     1.1. There is some issue with the override which I need to get into later
 
 2. Now, a user needs to pick up a book and write its name in the terminal. Then the program will check whether this book is in the list. 
+
+3. If a user types a book not in the inventory, the program stops. Needs fixing. 
