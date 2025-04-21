@@ -71,11 +71,19 @@ public class App {
         private Scanner scanner;
 
         public UserAsksForBook(ListOfBooks listOfBooks) {
-            System.out.println("Please make your choice:");
             this.scanner = new Scanner(System.in);
-            String name = scanner.nextLine();
-
             boolean bookFound = false;
+
+            while(!bookFound) {
+                System.out.println("Please make your choice (or type 'exit' to quit):");
+                String name = scanner.nextLine();
+            
+            if (name.equalsIgnoreCase("exit")) {
+                System.out.println("Will see you another time.");
+                break;
+            }
+           
+
             for(Book book : listOfBooks.getBooks()) {
                 if(book.getName().equalsIgnoreCase(name)){                  //need to get a better understanding
                     System.out.println("Your book choice was " + book);
@@ -88,10 +96,12 @@ public class App {
                 System.out.println("Sorry, this book is not in our inventory");
             }    
 
-            scanner.close();
+           
         }
 
-    }
+    scanner.close();
+}
+}
 
 }
 
