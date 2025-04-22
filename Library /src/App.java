@@ -62,7 +62,7 @@ public class App {
             }
         }   
 
-        public List<Book> getBooks() {                                  //need to get a better understanding
+        public List<Book> getBooks() {                                  //need to get a better understanding, okay, it's a getter method 
             return books;
         }
     }
@@ -72,9 +72,10 @@ public class App {
 
         public UserAsksForBook(ListOfBooks listOfBooks) {
             this.scanner = new Scanner(System.in);
-            boolean bookFound = false;
+            
 
-            while(!bookFound) {
+            while(true) {
+                System.out.println();
                 System.out.println("Please make your choice (or type 'exit' to quit):");
                 String name = scanner.nextLine();
             
@@ -83,10 +84,10 @@ public class App {
                 break;
             }
            
-
+            boolean bookFound = false;
             for(Book book : listOfBooks.getBooks()) {
-                if(book.getName().equalsIgnoreCase(name)){                  //need to get a better understanding
-                    System.out.println("Your book choice was " + book);
+                if(book.getName().equalsIgnoreCase(name)){                  
+                    System.out.println("Your book choice was " + book +"\n");
                     bookFound = true;
                     break;
                 }
@@ -102,6 +103,7 @@ public class App {
     scanner.close();
 }
 }
+
 
 }
 
