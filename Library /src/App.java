@@ -99,7 +99,6 @@ public class App {
                     if(book.isAvailable()) {
                         System.out.println("Your book choice was " + book +"\n");
                         book.setAvailable(false);
-                        System.out.println("This book has already been borrowed.");
 
                     }   else {
                         System.out.println("Sorry, this book is currently unavailable.");  

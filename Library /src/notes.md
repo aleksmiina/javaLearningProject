@@ -27,6 +27,6 @@ To do:
 
 4. Need to implement the way for a book to be borrowed out. [x]
 
-5. The program now tells that a book is unavailable even if it has not been borrowed. []
+5. The program now tells that a book is unavailable even if it has not been borrowed. [x]
 
 
