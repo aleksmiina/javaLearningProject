@@ -18,18 +18,15 @@ Library:
 
 To do:
 
-1. I want to print out all the available books to a user in order he could choose one.
-    1.1. There is some issue with the override which I need to get into later
+1. I want to print out all the available books to a user in order he could choose one.  [x]
+    1.1. There is some issue with the override which I need to get into later       [x]
 
-2. Now, a user needs to pick up a book and write its name in the terminal. Then the program will check whether this book is in the list. 
+2. Now, a user needs to pick up a book and write its name in the terminal. Then the program will check whether this book is in the list. [x]
 
-3. If a user types a book not in the inventory, the program stops. Needs fixing. 
+3. If a user types a book not in the inventory, the program stops. Needs fixing. [x]
 
-4. Need to implement the way for a book to be borrowed out. 
+4. Need to implement the way for a book to be borrowed out. [x]
 
-public class TheBookIsBorrowed{
+5. The program now tells that a book is unavailable even if it has not been borrowed. []
 
-    public TheBookIsBorrowed(ListOfBooks){
-        
-    }
-}
+

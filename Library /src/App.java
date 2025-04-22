@@ -29,9 +29,18 @@ public class App {
             this.isAvailable = isAvailable;
         }
 
-        public String getName() {                   //need to get a better understanding
+        public String getName() {                   
             return name;
         }
+        public boolean isAvailable() {
+            return isAvailable;
+        }
+        
+        public void setAvailable(boolean isAvailable) {
+            this.isAvailable = isAvailable;
+
+        }
+        
 
         @Override
         public String toString() { //toString is a method's name for overriding 
@@ -46,11 +55,11 @@ public class App {
             this.books = new ArrayList<>(); // initialization of the Book list
 
             //firstly, creating a new Book object and then is adding this object to the books.list
-            books.add(new Book("Ancient Tales of the Kaldorei: Volume I", "Archivist Seralen (attributed)", -9500, true)); 
-            books.add(new Book("The Wisdom of the Earthmother: Teachings of the Tauren", "Chief Thunderhoof (attributed)", -1500, true)); 
+            books.add(new Book("Ancient Tales of the Kaldorei", "Archivist Seralen (attributed)", -9500, true)); 
+            books.add(new Book("The Wisdom of the Earthmother", "Chief Thunderhoof (attributed)", -1500, true)); 
             books.add(new Book("A Traveler's Guide to Un'Goro Crater and its Wonders", "Explorer's League Cartographers", 25, true)); 
-            books.add(new Book("The War of the Sands: Chronicles of the Ahn'Qiraj Conflict", "Silithus Historians' Guild", 80, false)); 
-            books.add(new Book("Echoes of the Long Hunt: Tauren Oral Traditions (Transcribed)", "Bravehoof the Scribe",150, true)); 
+            books.add(new Book("The War of the Sands", "Silithus Historians' Guild", 80, false)); 
+            books.add(new Book("Echoes of the Long Hunt", "Bravehoof the Scribe",150, true)); 
  
         }
 
@@ -62,7 +71,7 @@ public class App {
             }
         }   
 
-        public List<Book> getBooks() {                                  //need to get a better understanding, okay, it's a getter method 
+        public List<Book> getBooks() {                                  
             return books;
         }
     }
@@ -86,10 +95,18 @@ public class App {
            
             boolean bookFound = false;
             for(Book book : listOfBooks.getBooks()) {
-                if(book.getName().equalsIgnoreCase(name)){                  
-                    System.out.println("Your book choice was " + book +"\n");
+                if(book.getName().equalsIgnoreCase(name)){  
+                    if(book.isAvailable()) {
+                        System.out.println("Your book choice was " + book +"\n");
+                        book.setAvailable(false);
+                        System.out.println("This book has already been borrowed.");
+
+                    }   else {
+                        System.out.println("Sorry, this book is currently unavailable.");  
+                    }             
                     bookFound = true;
                     break;
+                  
                 }
             }
 
